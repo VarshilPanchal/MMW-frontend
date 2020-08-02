@@ -1,0 +1,52 @@
+<div class="form">
+
+    <form #productForm="ngForm">
+        <mat-label> Add product </mat-label>
+        <div class="">
+            <mat-form-field class="form-group" appearance="legacy">
+                <mat-label>Product Name</mat-label>
+                <input matInput type="text" id="name" placeholder="ex.washing machine" name="name" #name="ngModel"
+                    class="form-control" [(ngModel)]="product.name" required>
+                <mat-error>Hint</mat-error>
+                <!-- </div> -->
+            </mat-form-field>
+            <br>
+            <mat-form-field class="form-group" appearance="legacy">
+                <mat-label>Image </mat-label>
+                <input matInput placeholder="link of image" id="image" name="image" #image="ngModel"
+                    class="form-control" [(ngModel)]="product.image" required>
+                <mat-error>Hint</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="form-group " appearance="legacy">
+                <mat-label>Textarea</mat-label>
+                <textarea matInput placeholder="washing machine use to wash the clothes " id="detail" name="detail"
+                    #detail="ngModel" class="form-control" [(ngModel)]="product.detail" required></textarea>
+                <mat-error>Hint</mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="form-group" appearance="legacy">
+                <mat-label>Amount</mat-label>
+                <input matInput type="number" placeholder="ex.100" id="prize" name="prize" #prize="ngModel"
+                    class="form-control" [(ngModel)]="product.prize" required>
+                <span matPrefix>₹&nbsp;</span>
+                <span matSuffix>.00</span>
+                <mat-error>Hint</mat-error>
+            </mat-form-field>
+            <br>
+
+            <mat-checkbox color="primary" activeflag="ngModel" id="activeflag" name="activeflag" class="form-control"
+                [(ngModel)]="product.activeflag" false>
+                <mat-label>currently working on product</mat-label>
+            </mat-checkbox>
+
+        </div>
+
+
+        <button mat-raised-button type="submit" [disabled]="!productForm.valid " (click)="add(product)">
+            {{editMode ? 'update' : 'save'}}
+        </button><br>
+        <mat-error *ngIf="!productForm.valid && productForm.submitted">pleasae enter all detail</mat-error>
+
+    </form>
+</div>

@@ -1,0 +1,16 @@
+.eximg {
+    /* background-image: url(''); */
+    background-size: cover;
+    width          : 50%;
+    height         : 100%;
+}
+
+.margin {
+    margin : 10px;
+    padding: 10px;
+}
+
+.padding {
+    padding-right : 50px;
+    padding-bottom: 50px;
+}

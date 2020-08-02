@@ -1,0 +1,24 @@
+<p>categories works!</p>
+
+
+<div>
+    <h2 class="title">Categories</h2>
+
+    <div *ngFor="let category of categories">
+
+        <mat-grid-list cols="3" rows="1" rowsize="3:1">
+
+            <mat-grid-tile>
+
+                <mat-grid-tile-header> {{ category.type | uppercase }}</mat-grid-tile-header>
+
+
+
+                <mat-grid-tile-footer> {{ category.image }}</mat-grid-tile-footer>
+
+            </mat-grid-tile>
+
+        </mat-grid-list>
+
+    </div>
+</div>

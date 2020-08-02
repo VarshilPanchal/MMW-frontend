@@ -1,0 +1,5 @@
+<app-product-item 
+    *ngFor="let productElement of products; let indexOf = index" 
+    [product]="productElement"
+    [index]=productElement.id>
+</app-product-item>

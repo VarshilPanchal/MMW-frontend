@@ -1,0 +1,36 @@
+<mat-list>
+    <mat-list-item>
+
+        <mat-card mat-line>
+            <mat-grid-list cols="3" rows="1" rowHeight="3:1" gutterSize="5px">
+
+                <mat-card-header mat-card-title mat-line class="margin">{{product.name}}</mat-card-header>
+
+
+                <mat-grid-tile class="margin">
+                    <img mat-card-image mat-line class="img-thumbnail eximg rounded float-left " src="{{product.image}}"
+                        alt="{{product.name}}">
+                </mat-grid-tile>
+                <mat-grid-tile class="margin" colspan="2">
+
+
+                    <mat-card-content>
+                        <mat-card-title mat-line>{{product.name}}</mat-card-title>
+                        <br>
+                        <mat-card-content mat-line>
+                            <P>Detail: {{product.detail}}</P>
+                            <p>prize: {{product.prize | currency:"INR" }}</p>
+                        </mat-card-content>
+                    </mat-card-content>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+            <mat-card-actions class="padding" align="end">
+                <button mat-raised-button (click)="getDetail()" class="margin">
+                    Get Detail </button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-divider></mat-divider>
+
+    </mat-list-item>
+</mat-list>
